@@ -24,10 +24,10 @@ namespace API.Controllers
             using var hmac = new HMACSHA512();
             var user = new User
             {
-                Username = registerDto.Username,
+                Username = registerDto.Username.ToLower(),
                 // TODO: Consider using the Task.Run pattern to perform the CPU-intensive password hashing asynchronously.
                 PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
-                PasswordSalt = hmac.Key
+                PasswordSalt = hmac.Key 
             };
 
             _context.Users.Add(user);
