@@ -1,4 +1,5 @@
 ﻿using API.Data;
+using API.DTOs;
 using API.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Cryptography;
@@ -15,14 +16,17 @@ namespace API.Controllers
         }
 
         // TODO: Take JSON instead of parameters
-        [HttpPost("register")] // POST: api/account/register?username=admin&password=admin
-        public async Task<ActionResult<User>> Register(string username, string password)
+        [HttpPost("register")]
+        public async Task<ActionResult<User>> Register(RegisterDto registerDto)
         {
+            // TODO: Ensure that the provided data is valid and meets the required criteria
+            // TODO: Check if username already exists in the database
             using var hmac = new HMACSHA512();
             var user = new User
             {
-                Username = username,
-                PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password)),
+                Username = registerDto.Username,
+                // TODO: Consider using the Task.Run pattern to perform the CPU-intensive password hashing asynchronously.
+                PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.Password)),
                 PasswordSalt = hmac.Key
             };
 
