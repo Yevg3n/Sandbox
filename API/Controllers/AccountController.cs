@@ -2,6 +2,8 @@
 using API.DTOs;
 using API.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Collections;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -32,6 +34,21 @@ namespace API.Controllers
 
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
+
+            return user;
+        }
+
+        [HttpPost("login")]
+        public async Task<ActionResult<User>> Login(LoginDto loginDto)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(x => x.Username == loginDto.Username);
+            if (user == null) return Unauthorized();
+
+            using var hmac = new HMACSHA512(user.PasswordSalt);
+            var PasswordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(loginDto.Password));
+
+            bool valid = StructuralComparisons.StructuralEqualityComparer.Equals(PasswordHash, user.PasswordHash);
+            if (!valid) return Unauthorized("Invalid Password");
 
             return user;
         }
