@@ -1,13 +1,31 @@
 <div class="d-flex flex-column flex-md-row align-items-center pb-3 pt-3 border-bottom">
+    
     <a href="/" class="d-flex align-items-center link-body-emphasis text-decoration-none">
+        <!-- Thanks to https://www.svgrepo.com/svg/ for the image-->
+        <img src="./assets/images/codemirror-svgrepo-com.svg" width="40" height="40" class="me-2" viewBox="0 0 118 94" alt="" class="logo_img">
       <span class="fs-4">Sandbox</span>
     </a>
 
     <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-      <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Resumé</a>
-      <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">About</a>
-      <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Code Samples</a>
-      <button class="btn btn-outline-success" type="submit">Login</button>
-    </nav>
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Resumé</a>
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">About</a>
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Code Samples</a>
+        
+        <form #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off" class="d-flex">
+            <input 
+                name="username"
+                [(ngModel)]="model.username"
+                class="form-control me-2" 
+                type="text" 
+                placeholder="Username">
+            <input
+                name="password"
+                [(ngModel)]="model.password"
+                class="form-control me-2" 
+                type="password" 
+                placeholder="Password">
+            <button class="btn btn-outline-success" type="submit">Login</button>
+        </form>
 
+      </nav> 
 </div>
