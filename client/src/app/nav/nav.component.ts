@@ -13,7 +13,15 @@ export class NavComponent implements OnInit{
   constructor(private AccountService: AccountService) {}
 
   ngOnInit(): void {
-    
+    this.getCurrentUser();
+  }
+
+  // TODO: Temporary code. To be removed.
+  getCurrentUser(){
+    this.AccountService.currentUser$.subscribe({
+      next: user => this.loggedIn = !!user,
+      error: error => console.log(error)
+    });
   }
 
   login(){
@@ -27,6 +35,7 @@ export class NavComponent implements OnInit{
   }
 
   logout(){
+    this.AccountService.logout();
     this.loggedIn = false;
   }
 }
