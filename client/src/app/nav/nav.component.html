@@ -7,11 +7,11 @@
     </a>
 
     <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-        <a *ngIf="loggedIn" class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Resumé</a>
-        <a *ngIf="loggedIn" class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">About</a>
-        <a *ngIf="loggedIn" class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Code Samples</a>
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Resumé</a>
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">About</a>
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Code Samples</a>
 
-        <div *ngIf="loggedIn" class="dropdown me-3 py-2" dropdown> 
+        <div *ngIf="accountService.currentUser$ | async" class="dropdown me-3 py-2" dropdown> 
             <a class="dropdown-toggle text-decoration-none" dropdownToggle>Logged In</a>
             <div class="dropdown-menu" *dropdownMenu>
                 <a class="dropdown-item">Edit Profile</a>
@@ -20,7 +20,7 @@
         </div>
 
         
-        <form *ngIf="!loggedIn" #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off" class="d-flex">
+        <form *ngIf="!(accountService.currentUser$ | async)" #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off" class="d-flex">
             <input 
                 name="username"
                 [(ngModel)]="model.username"
