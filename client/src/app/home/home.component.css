@@ -167,6 +167,50 @@
   background: linear-gradient(90deg, hsla(14, 98%, 50%, .3), hsla(14, 98%, 50%, 0) );
 }
 
+/* Scroll Button */
+.home__scroll{
+  display: block;
+  width: max-content;
+  margin: 0 auto;
+}
+
+.home__scroll-text{
+  display: none;
+}
+
+.home__scroll-box{
+  background-color: var(--black-color);
+  color: var(--white-color);
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  font-size: 1rem;
+  overflow: hidden;
+  transition: background-color .4s;
+}
+
+.home__scroll-box i{
+  animation: scroll-down 3s infinite;
+}
+
+@keyframes scroll-down{
+  0%{
+    transform: translateY(-1rem);
+    opacity: 0;
+  }
+
+  50%{
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100%{
+    transform: translateY(.6rem);
+    opacity: 0;
+  }
+}
+
 /* About Section */
 .about{
   /* background-color: var(--container-color); */
@@ -361,6 +405,29 @@
   .home__social-link{
     font-size: 2.5rem;
     padding: .2rem;
+  }
+
+  .home__scroll{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    column-gap: .75rem;
+  }
+
+  .home__scroll-text{
+    display: block;
+    color: var(--text-color);
+    font-size: var(--small-font-size);
+    font-weight: var(--font-medium);
+  }
+
+  .home__scroll-box{
+    width: 44px;
+    height: 44px;
+  }
+
+  .home__scroll-box i{
+    font-size: 1.25;
   }
 
   /* about section */
