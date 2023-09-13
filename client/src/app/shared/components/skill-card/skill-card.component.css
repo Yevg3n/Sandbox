@@ -26,3 +26,13 @@
     font-size: var(--small-font-size);
     margin-bottom: 1rem;
   }
+
+  .skill__image:hover img{
+    animation: bounce .6s;
+  }
+  
+  @keyframes bounce{
+    0%, 40%, 80%{ transform: translate(0); }
+    20%{ transform: translateY(-6px); }
+    60%{ transform: translateY(-3px); }
+  }
