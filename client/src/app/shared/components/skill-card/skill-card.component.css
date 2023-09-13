@@ -1,0 +1,28 @@
+.skill__card,
+.skill__image{
+  display: grid;
+}
+
+.skill__card{
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .skill__image{
+    width: 80px;
+    height: 100px;
+    /* background-color: var(--container-color); */
+    /* border-radius: 3rem; */
+    place-items: center;
+    /* margin-bottom: 1rem; */
+  }
+  
+  .skill__image img{
+    width: 65px;
+    height: 65px;
+  }
+  
+  .skill__name{
+    font-size: var(--small-font-size);
+    margin-bottom: 1rem;
+  }

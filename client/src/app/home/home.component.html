@@ -102,33 +102,11 @@
          <div class="interests__content">
 
             <h2 class="interests__title">Backend</h2>
-            <!-- I may want to move skills__info out into separate component so I 
-            can generate it dynamically and avoid redundancy -->
+            
             <div class="skills__info">
-               
-               <div class="skill__data">
-                   <div class="skill__image">
-                       <img src="assets/images/tech_icons/c_sharp.png" alt="skills image">
-                   </div>
-                   <h3 class="skill__name">C#</h3>
-               </div>
-
-               <div class="skill__data">
-                   <div class="skill__image">
-                       <img src="assets/images/tech_icons/java.png" alt="skills image">
-                   </div>
-
-                   <h3 class="skill__name">Java</h3>
-               </div>
-
-               <div class="skill__data">
-                  <div class="skill__image">
-                      <img src="assets/images/tech_icons/python.png" alt="skills image">
-                  </div>
-
-                  <h3 class="skill__name">Python</h3>
-              </div>
-
+               <app-skill-card [icon]="'c_sharp.png'" [skill_name]="'C#'"></app-skill-card>
+               <app-skill-card [icon]="'java.png'" [skill_name]="'Java'"></app-skill-card>
+               <app-skill-card [icon]="'python.png'" [skill_name]="'Python'"></app-skill-card>
             </div>   
             
             <p class="services__description">
@@ -144,12 +122,7 @@
             <h2 class="interests__title">Data Analysis</h2>
             
             <div class="skills__info">
-               <div class="skill__data">
-                   <div class="skill__image">
-                       <img src="assets/images/tech_icons/python.png" alt="skills image">
-                   </div>
-                   <h3 class="skill__name">Python</h3>
-               </div>
+               <app-skill-card [icon]="'python.png'" [skill_name]="'Python'"></app-skill-card>
             </div>
             
             <p class="services__description">
@@ -166,21 +139,8 @@
             <h2 class="interests__title">Front-End</h2>   
             
             <div class="skills__info">
-               
-               <div class="skill__data">
-                   <div class="skill__image">
-                       <img src="assets/images/tech_icons/angular.png" alt="skills image">
-                   </div>
-                   <h3 class="skill__name">Angular</h3>
-               </div>
-
-               <div class="skill__data">
-                  <div class="skill__image">
-                      <img src="assets/images/tech_icons/react.png" alt="skills image">
-                  </div>
-                  <h3 class="skill__name">React</h3>
-              </div>
-
+               <app-skill-card [icon]="'angular.png'" [skill_name]="'Angular'"></app-skill-card>
+               <app-skill-card [icon]="'react.png'" [skill_name]="'React'"></app-skill-card>
             </div>
 
             <p class="services__description">

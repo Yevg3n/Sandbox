@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { HomeComponent } from './home/home.component';
 import { ResumeComponent } from './resume/resume.component';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { ResumeComponent } from './resume/resume.component';
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    BsDropdownModule.forRoot()
+    BsDropdownModule.forRoot(),
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

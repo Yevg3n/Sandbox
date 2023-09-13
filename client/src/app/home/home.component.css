@@ -334,38 +334,12 @@
 }
 
 /* Technical skill icons, name and description */
-.skills__info,
-.skill__data,
-.skill__image{
+.skills__info{
   display: grid;
 }
 
 .skills__info{
   grid-template-columns: repeat(3, 1fr);
-}
-
-.skill__data{
-  justify-content: center;
-  text-align: center;
-}
-
-.skill__image{
-  width: 80px;
-  height: 100px;
-  /* background-color: var(--container-color); */
-  /* border-radius: 3rem; */
-  place-items: center;
-  /* margin-bottom: 1rem; */
-}
-
-.skill__image img{
-  width: 65px;
-  height: 65px;
-}
-
-.skill__name{
-  font-size: var(--small-font-size);
-  margin-bottom: 1rem;
 }
 
 
