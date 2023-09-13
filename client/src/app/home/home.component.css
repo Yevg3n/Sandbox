@@ -195,12 +195,10 @@
     transform: translateY(-1rem);
     opacity: 0;
   }
-
   50%{
     transform: translateY(0);
     opacity: 1;
   }
-
   100%{
     transform: translateY(.6rem);
     opacity: 0;
@@ -307,6 +305,69 @@
 .button:hover{
   background-color: var(--first-color);
 }
+
+/* Interests section */
+.interests__container{
+  grid-template-columns: 360px;
+  justify-content: center;
+  row-gap: 2rem;
+  padding-top: 1rem;
+}
+
+.interests__card{
+  position: relative;
+}
+
+.interests__content{
+  height: 100%;
+  background-color: var(--body-color);
+  /* border: 4px solid var(--black-color); */
+  padding: 6rem 1rem 3rem;
+  z-index: 5;
+  position: relative;
+  transition: background-color .4s, border .4s;
+}
+
+.interests__title{
+  font-size: var(--h2-font-size);
+  margin-bottom: 1.25rem;
+}
+
+/* Technical skill icons, name and description */
+.skills__info,
+.skill__data,
+.skill__image{
+  display: grid;
+}
+
+.skills__info{
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.skill__data{
+  justify-content: center;
+  text-align: center;
+}
+
+.skill__image{
+  width: 80px;
+  height: 100px;
+  /* background-color: var(--container-color); */
+  /* border-radius: 3rem; */
+  place-items: center;
+  /* margin-bottom: 1rem; */
+}
+
+.skill__image img{
+  width: 65px;
+  height: 65px;
+}
+
+.skill__name{
+  font-size: var(--small-font-size);
+  margin-bottom: 1rem;
+}
+
 
 
 /* For large devices */
@@ -425,10 +486,9 @@
     font-size: 1.25;
   }
 
-  /* about section */
+  /* About section */
   .about__container{
     grid-template-columns: 525px 525px;
-    /* gap: 1rem 9rem; */
     align-items: center;
     padding-block: 1rem;
   }
@@ -475,6 +535,22 @@
     justify-content: initial;
   }
 
+  .interests__container{
+    grid-template-columns: repeat(3, 350px);
+    /* padding-block: 3rem 5rem; */
+  }
+
+  .interests__content{
+    padding: 6.5rem, 1.5rem 3.5rem;
+    /* border: 6px solid var(--black-color);*/
+  }
+
+  .interests__title{
+    margin-bottom: 1.5rem;
+  }
+
 }
+
+
 
 
